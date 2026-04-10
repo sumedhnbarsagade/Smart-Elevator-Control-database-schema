@@ -1,0 +1,107 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="LiftGrid ERD" id="0">
+    <mxGraphModel dx="1377" dy="2083" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="hfj70_-xYCFbpYJ2bZBC-1" edge="1" parent="1" source="b" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="f" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b" parent="1" style="shape=rectangle" value="Building&#xa;PK building_id&#xa;name&#xa;location" vertex="1">
+          <mxGeometry height="110" width="200" x="50" y="-80" as="geometry" />
+        </mxCell>
+        <mxCell id="f" parent="1" style="shape=rectangle" value="Floor&#xa;PK floor_id&#xa;FK building_id&#xa;floor_number&#xa;zone" vertex="1">
+          <mxGeometry height="110" width="240" x="410" y="-80" as="geometry" />
+        </mxCell>
+        <mxCell id="e" parent="1" style="shape=rectangle" value="Ride_Request&#xa;PK request_id&#xa;FK source_floor_id&#xa;FK destination_floor_id&#xa;direction&#xa;status&#xa;requested_at" vertex="1">
+          <mxGeometry height="150" width="310" x="30" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="hfj70_-xYCFbpYJ2bZBC-9" edge="1" parent="1" source="s" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="f" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s" parent="1" style="shape=rectangle" value="Elevator_Floor_Map&#xa;PK id&#xa;FK elevator_id&#xa;FK floor_id" vertex="1">
+          <mxGeometry height="80" width="240" x="950" y="-65" as="geometry" />
+        </mxCell>
+        <mxCell id="hfj70_-xYCFbpYJ2bZBC-6" edge="1" parent="1" source="r" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="m" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r" parent="1" style="shape=rectangle" value="Shaft&#xa;PK shaft_id&#xa;FK building_id&#xa;shaft_number" vertex="1">
+          <mxGeometry height="100" width="270" x="50" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="hfj70_-xYCFbpYJ2bZBC-15" edge="1" parent="1" source="a" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="m" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a" parent="1" style="shape=rectangle" value="Ride_Assignment&#xa;PK assignment_id&#xa;FK request_id&#xa;FK elevator_id&#xa;assigned_at" vertex="1">
+          <mxGeometry height="150" width="270" x="450" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="l" parent="1" style="shape=rectangle" value="Ride_Log&#xa;PK ride_id&#xa;FK elevator_id&#xa;FK request_id&#xa;start_time&#xa;end_time" vertex="1">
+          <mxGeometry height="135" width="300" x="1010" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="hfj70_-xYCFbpYJ2bZBC-32" edge="1" parent="1" source="m" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.152;entryY=0.021;entryDx=0;entryDy=0;entryPerimeter=0;" target="hfj70_-xYCFbpYJ2bZBC-3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="750" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hfj70_-xYCFbpYJ2bZBC-33" edge="1" parent="1" source="m" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0;exitDx=0;exitDy=0;" target="hfj70_-xYCFbpYJ2bZBC-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="720" y="265" />
+              <mxPoint x="720" y="383" />
+              <mxPoint x="1185" y="383" />
+            </Array>
+            <mxPoint x="990" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m" parent="1" style="shape=rectangle;direction=west;" value="Elevator&#xa;PK elevator_id&#xa;FK building_id&#xa;FK shaft_id&#xa;capacity&#xa;min_floor&#xa;max_floor&#xa;is_active" vertex="1">
+          <mxGeometry height="130" width="340" x="400" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="hfj70_-xYCFbpYJ2bZBC-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;Elevator_Status&lt;/div&gt;&lt;div&gt;PK status_id&lt;/div&gt;&lt;div&gt;FK elevator_id&lt;/div&gt;&lt;div&gt;current_floor&lt;/div&gt;&lt;div&gt;direction&lt;/div&gt;&lt;div&gt;state&lt;/div&gt;&lt;div&gt;updated_at&lt;/div&gt;" vertex="1">
+          <mxGeometry height="130" width="240" x="750" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="hfj70_-xYCFbpYJ2bZBC-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;Maintenance_Record&lt;/div&gt;&lt;div&gt;PK maintenance_id&lt;/div&gt;&lt;div&gt;FK elevator_id&lt;/div&gt;&lt;div&gt;issue&lt;/div&gt;&lt;div&gt;status&lt;/div&gt;&lt;div&gt;reported_at&lt;/div&gt;&lt;div&gt;resolved_at&lt;/div&gt;" vertex="1">
+          <mxGeometry height="130" width="290" x="1040" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="hfj70_-xYCFbpYJ2bZBC-5" edge="1" parent="1" source="b" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.365;entryY=-0.02;entryDx=0;entryDy=0;entryPerimeter=0;" target="r">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hfj70_-xYCFbpYJ2bZBC-14" edge="1" parent="1" source="e" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.006;entryY=0.567;entryDx=0;entryDy=0;entryPerimeter=0;" target="a">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hfj70_-xYCFbpYJ2bZBC-24" parent="1" style="shape=table;startSize=0;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=0;align=center;resizeLast=1;strokeColor=none;fillColor=none;collapsible=0;" value="" vertex="1">
+          <mxGeometry height="30" width="170" x="160" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="hfj70_-xYCFbpYJ2bZBC-25" parent="hfj70_-xYCFbpYJ2bZBC-24" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;" value="" vertex="1">
+          <mxGeometry height="30" width="170" as="geometry" />
+        </mxCell>
+        <mxCell id="hfj70_-xYCFbpYJ2bZBC-26" parent="hfj70_-xYCFbpYJ2bZBC-25" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;overflow=hidden;whiteSpace=wrap;html=1;" value="PK" vertex="1">
+          <mxGeometry height="30" width="20" as="geometry">
+            <mxRectangle height="30" width="20" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hfj70_-xYCFbpYJ2bZBC-27" parent="hfj70_-xYCFbpYJ2bZBC-25" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;overflow=hidden;whiteSpace=wrap;html=1;" value="UniqueID" vertex="1">
+          <mxGeometry height="30" width="150" x="20" as="geometry">
+            <mxRectangle height="30" width="150" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hfj70_-xYCFbpYJ2bZBC-29" edge="1" parent="1" source="hfj70_-xYCFbpYJ2bZBC-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1000" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hfj70_-xYCFbpYJ2bZBC-28" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.annotation_2;align=left;labelPosition=right;pointerEvents=1;" value="" vertex="1">
+          <mxGeometry height="100" width="50" x="740" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="hfj70_-xYCFbpYJ2bZBC-30" edge="1" parent="1" source="hfj70_-xYCFbpYJ2bZBC-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="790" y="280" />
+              <mxPoint x="980" y="280" />
+              <mxPoint x="980" y="300" />
+            </Array>
+            <mxPoint x="1010" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
